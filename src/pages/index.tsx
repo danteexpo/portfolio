@@ -1,19 +1,14 @@
-import { Inter } from "next/font/google";
-import Head from "next/head";
-
-const inter = Inter({ subsets: ["latin"] });
+import Layout from "@/components/Layout";
 
 export default function Home() {
 	return (
-		<>
-			<Head>
-				<title>Dante Expósito</title>
-			</Head>
-			<main
-				className={`flex min-h-screen flex-col items-center justify-between p-24 ${inter.className}`}
-			>
-				<p>Hello!</p>
-			</main>
-		</>
+		<Layout>
+			<h1 className="text-4xl font-bold">Dante Expósito</h1>
+			<p>
+				A self-taught and optimistic frontend developer who loves designing and
+				building web applications using React, Next.js, TailwindCSS, and
+				TypeScript.
+			</p>
+		</Layout>
 	);
 }
