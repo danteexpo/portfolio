@@ -33,7 +33,7 @@ const Layout = ({ children }: LayoutProps) => {
 			>
 				<main
 					className={cn(
-						"min-w-64 max-w-2xl mx-auto flex flex-col gap-8 p-8 text-xl font-medium font-sans antialiased",
+						"min-w-72 max-w-2xl mx-auto flex flex-col gap-8 p-8 text-xl font-medium font-sans antialiased",
 						fontSans.variable
 					)}
 				>

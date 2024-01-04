@@ -32,7 +32,7 @@ const Navbar = () => {
 							className={cn(
 								"capitalize hover:text-gray-700 dark:hover:text-gray-300",
 								!navLink.built &&
-									"pointer-events-none text-gray-500 dark:text-gray-300 line-through decoration-1"
+									"pointer-events-none text-gray-500 dark:text-gray-400 line-through decoration-1"
 							)}
 						>
 							{navLink.label}{" "}
