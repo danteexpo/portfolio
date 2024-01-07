@@ -14,46 +14,40 @@ const stack = [
 	{
 		label: "nextjs",
 		href: "https://nextjs.org/",
-		img: "https://github.com/nextjs.png",
 		description: "The React Framework for the Web.",
 	},
 	{
 		label: "react",
 		href: "https://react.dev/",
-		img: "https://github.com/react.png",
 		description: "A JavaScript library for building user interfaces.",
 	},
 	{
 		label: "tailwindcss",
 		href: "https://tailwindcss.com/",
-		img: "https://github.com/tailwindcss.png",
 		description: "A utility-first CSS framework.",
 	},
 	{
 		label: "typescript",
 		href: "https://www.typescriptlang.org/",
-		img: "https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/typescript/typescript.png",
 		description: "A strongly typed language that builds on top of JavaScript.",
 	},
 ];
 
 const techs = [
-	{ label: "HTML", img: null },
-	{ label: "CSS", img: null },
-	{ label: "Scss/Sass", img: null },
-	{ label: "JavaScript", img: null },
-	{ label: "TypeScript", img: null },
-	{ label: "React", img: null },
-	{ label: "Next.js", img: null },
-	{ label: "Vite", img: null },
-	{ label: "TailwindCSS", img: null },
-	{ label: "Framer Motion", img: null },
-	{ label: "SWR", img: null },
-	{ label: "Zustand", img: null },
-	{ label: "Node.js", img: null },
-	{ label: "Express.js", img: null },
-	{ label: "Prisma", img: null },
-	{ label: "Supabase", img: null },
+	{ label: "HTML", img: "/static/html.svg", inverts: false },
+	{ label: "CSS", img: "/static/css.svg", inverts: false },
+	{ label: "Scss/Sass", img: "/static/sass.svg", inverts: false },
+	{ label: "JavaScript", img: "/static/javascript.svg", inverts: false },
+	{ label: "TypeScript", img: "/static/typescript.svg", inverts: false },
+	{ label: "React", img: "/static/react.svg", inverts: false },
+	{ label: "Next.js", img: "/static/nextjs.svg", inverts: true },
+	{ label: "Vite", img: "/static/vite.svg", inverts: false },
+	{ label: "TailwindCSS", img: "/static/tailwindcss.svg", inverts: false },
+	{ label: "Framer Motion", img: "/static/framermotion.svg", inverts: false },
+	{ label: "SWR", img: "/static/swr.svg", inverts: true },
+	{ label: "Prisma", img: "/static/prisma.svg", inverts: true },
+	{ label: "Supabase", img: "/static/supabase.svg", inverts: false },
+	{ label: "Firebase", img: "/static/firebase.svg", inverts: false },
 ];
 
 const tools = [
@@ -99,13 +93,15 @@ export default function Home() {
 								</HoverCardTrigger>
 								<HoverCardContent className="w-80 hidden lg:flex">
 									<div className="flex justify-between space-x-4">
-										<Avatar>
+										<Avatar className="rounded-none">
 											<AvatarImage
 												src={`/static/${tech.label}.svg`}
 												alt={tech.label}
 												className={tech.label === "nextjs" ? "dark:invert" : ""}
 											/>
-											<AvatarFallback>{tech.label.slice(0, 2)}</AvatarFallback>
+											<AvatarFallback>
+												{tech.label.slice(0, 2).toUpperCase()}
+											</AvatarFallback>
 										</Avatar>
 										<div className="space-y-1">
 											<h4 className="font-bold">@{tech.label}</h4>
@@ -139,7 +135,7 @@ export default function Home() {
 									alt="github"
 									className="invert dark:invert-0"
 								/>
-								<AvatarFallback>gi</AvatarFallback>
+								<AvatarFallback>GI</AvatarFallback>
 							</Avatar>
 							<p>GitHub</p>
 						</a>
@@ -161,7 +157,7 @@ export default function Home() {
 									alt="linkedin"
 									className="invert dark:invert-0"
 								/>
-								<AvatarFallback>li</AvatarFallback>
+								<AvatarFallback>LI</AvatarFallback>
 							</Avatar>
 							<p>LinkedIn</p>
 						</a>
@@ -179,13 +175,15 @@ export default function Home() {
 					{techs.map((tech) => (
 						<Card key={tech.label} className="w-full grid place-items-center">
 							<CardHeader className="flex flex-col items-center gap-4">
-								<Avatar>
+								<Avatar className="rounded-none">
 									<AvatarImage
-										src="/static/nextjs.svg"
-										alt="github"
-										className="dark:invert"
+										src={tech.img}
+										alt={tech.label}
+										className={tech.inverts ? "dark:invert" : ""}
 									/>
-									<AvatarFallback>{tech.label.slice(0, 2)}</AvatarFallback>
+									<AvatarFallback>
+										{tech.label.slice(0, 2).toUpperCase()}
+									</AvatarFallback>
 								</Avatar>
 								<CardTitle className="text-xl">{tech.label}</CardTitle>
 							</CardHeader>
@@ -200,13 +198,15 @@ export default function Home() {
 					{tools.map((tool) => (
 						<Card key={tool.label} className="w-full grid place-items-center">
 							<CardHeader className="flex flex-col items-center gap-4">
-								<Avatar>
+								<Avatar className="rounded-none">
 									<AvatarImage
 										src="/static/nextjs.svg"
-										alt="github"
+										alt={tool.label}
 										className="dark:invert"
 									/>
-									<AvatarFallback>{tool.label.slice(0, 2)}</AvatarFallback>
+									<AvatarFallback>
+										{tool.label.slice(0, 2).toUpperCase()}
+									</AvatarFallback>
 								</Avatar>
 								<CardTitle className="text-xl">{tool.label}</CardTitle>
 							</CardHeader>
