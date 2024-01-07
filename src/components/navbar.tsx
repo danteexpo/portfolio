@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ModeToggle } from "./mode-toggle";
 import { cn } from "@/lib/utils";
+import { Fragment } from "react";
 
 const navLinks = [
 	{
@@ -25,7 +26,7 @@ const Navbar = () => {
 		<header className="flex items-center w-full justify-between text-2xl font-medium">
 			<nav className="flex items-center gap-2">
 				{navLinks.map((navLink) => (
-					<>
+					<Fragment key={navLink.label}>
 						<Link
 							href={navLink.pathname}
 							key={navLink.label}
@@ -38,7 +39,7 @@ const Navbar = () => {
 							{navLink.label}{" "}
 						</Link>
 						{!navLink.built && <p className="inline text-lg">🚧</p>}
-					</>
+					</Fragment>
 				))}
 			</nav>
 			<ModeToggle />
