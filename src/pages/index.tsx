@@ -34,35 +34,43 @@ const stack = [
 ];
 
 const techs = [
-	{ label: "HTML", img: "/static/html.svg", inverts: false },
-	{ label: "CSS", img: "/static/css.svg", inverts: false },
-	{ label: "Scss/Sass", img: "/static/sass.svg", inverts: false },
-	{ label: "JavaScript", img: "/static/javascript.svg", inverts: false },
-	{ label: "TypeScript", img: "/static/typescript.svg", inverts: false },
-	{ label: "React", img: "/static/react.svg", inverts: false },
-	{ label: "Next.js", img: "/static/nextjs.svg", inverts: true },
-	{ label: "Vite", img: "/static/vite.svg", inverts: false },
-	{ label: "TailwindCSS", img: "/static/tailwindcss.svg", inverts: false },
-	{ label: "Framer Motion", img: "/static/framermotion.svg", inverts: false },
-	{ label: "SWR", img: "/static/swr.svg", inverts: true },
-	{ label: "Prisma", img: "/static/prisma.svg", inverts: true },
-	{ label: "Supabase", img: "/static/supabase.svg", inverts: false },
-	{ label: "Firebase", img: "/static/firebase.svg", inverts: false },
+	{ label: "HTML", img: "/static/techs/html.svg", inverts: false },
+	{ label: "CSS", img: "/static/techs/css.svg", inverts: false },
+	{ label: "Scss/Sass", img: "/static/techs/sass.svg", inverts: false },
+	{ label: "JavaScript", img: "/static/techs/javascript.svg", inverts: false },
+	{ label: "TypeScript", img: "/static/techs/typescript.svg", inverts: false },
+	{ label: "React", img: "/static/techs/react.svg", inverts: false },
+	{ label: "Next.js", img: "/static/techs/nextjs.svg", inverts: true },
+	{ label: "Vite", img: "/static/techs/vite.svg", inverts: false },
+	{
+		label: "TailwindCSS",
+		img: "/static/techs/tailwindcss.svg",
+		inverts: false,
+	},
+	{
+		label: "Framer Motion",
+		img: "/static/techs/framermotion.svg",
+		inverts: false,
+	},
+	{ label: "SWR", img: "/static/techs/swr.svg", inverts: true },
+	{ label: "Prisma", img: "/static/techs/prisma.svg", inverts: true },
+	{ label: "Supabase", img: "/static/techs/supabase.svg", inverts: false },
+	{ label: "Firebase", img: "/static/techs/firebase.svg", inverts: false },
 ];
 
 const tools = [
-	{ label: "Pop OS", img: null },
-	{ label: "Obsidian", img: null },
-	{ label: "Figma", img: null },
-	{ label: "VS Code", img: null },
-	{ label: "Vim Motions", img: null },
-	{ label: "Brave", img: null },
-	{ label: "GitHub", img: null },
-	{ label: "shadcn/ui", img: null },
-	{ label: "Material UI", img: null },
-	{ label: "Headless UI", img: null },
-	{ label: "myNoise.net", img: null },
-	{ label: "ChatGPT", img: null },
+	{ label: "Pop OS", img: "/static/tools/popos.svg", inverts: false },
+	{ label: "Obsidian", img: "/static/tools/obsidian.svg", inverts: false },
+	{ label: "Figma", img: "/static/tools/figma.svg", inverts: false },
+	{ label: "VS Code", img: "/static/tools/vscode.svg", inverts: false },
+	{ label: "Vim Motions", img: "/static/tools/vim.svg", inverts: false },
+	{ label: "Brave", img: "/static/tools/brave.svg", inverts: false },
+	{ label: "GitHub", img: "/static/github.svg", inverts: true },
+	{ label: "shadcn/ui", img: "/static/tools/shadcn.svg", inverts: true },
+	{ label: "Material UI", img: "/static/tools/material.svg", inverts: false },
+	{ label: "Headless UI", img: "/static/tools/headless.svg", inverts: false },
+	{ label: "myNoise.net", img: "/static/tools/mynoise.svg", inverts: true },
+	{ label: "ChatGPT", img: "/static/tools/chatgpt.svg", inverts: true },
 ];
 
 export default function Home() {
@@ -95,7 +103,7 @@ export default function Home() {
 									<div className="flex justify-between space-x-4">
 										<Avatar className="rounded-none">
 											<AvatarImage
-												src={`/static/${tech.label}.svg`}
+												src={`/static/techs/${tech.label}.svg`}
 												alt={tech.label}
 												className={tech.label === "nextjs" ? "dark:invert" : ""}
 											/>
@@ -200,9 +208,9 @@ export default function Home() {
 							<CardHeader className="flex flex-col items-center gap-4">
 								<Avatar className="rounded-none">
 									<AvatarImage
-										src="/static/nextjs.svg"
+										src={tool.img}
 										alt={tool.label}
-										className="dark:invert"
+										className={tool.inverts ? "dark:invert" : ""}
 									/>
 									<AvatarFallback>
 										{tool.label.slice(0, 2).toUpperCase()}
