@@ -7,8 +7,16 @@ import {
 	HoverCardTrigger,
 } from "@/components/ui/hover-card";
 import { Separator } from "@/components/ui/separator";
-import { Card, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { Fragment } from "react";
+import {
+	Carousel,
+	CarouselContent,
+	CarouselItem,
+	CarouselNext,
+	CarouselPrevious,
+} from "@/components/ui/carousel";
+import Image from "next/image";
 
 const stack = [
 	{
@@ -173,8 +181,28 @@ export default function Home() {
 				</div>
 			</section>
 			<Separator />
-			<section>
+			<section className="flex flex-col gap-2">
 				<h2 className="text-2xl font-bold">Projects</h2>
+				<div className="px-12">
+					<Carousel className="w-full">
+						<CarouselContent>
+							{Array.from({ length: 5 }).map((_, index) => (
+								<CarouselItem key={index} className="sm:basis-1/2">
+									<Card>
+										<CardContent className="relative flex aspect-square items-center justify-center p-6">
+											<Image src="/static/example.png" alt="example" fill />
+											<span className="text-3xl font-semibold">
+												{index + 1}
+											</span>
+										</CardContent>
+									</Card>
+								</CarouselItem>
+							))}
+						</CarouselContent>
+						<CarouselPrevious />
+						<CarouselNext />
+					</Carousel>
+				</div>
 			</section>
 			<Separator />
 			<section className="flex flex-col gap-2">
@@ -200,7 +228,7 @@ export default function Home() {
 				</div>
 			</section>
 			<Separator />
-			<section>
+			<section className="flex flex-col gap-2">
 				<h2 className="text-2xl font-bold">Uses</h2>
 				<div className="w-full grid grid-cols-2 sm:grid-cols-4 place-items-center gap-4">
 					{tools.map((tool) => (
