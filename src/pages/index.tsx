@@ -17,69 +17,8 @@ import {
 	CarouselPrevious,
 } from "@/components/ui/carousel";
 import Image from "next/image";
-
-const stack = [
-	{
-		label: "nextjs",
-		href: "https://nextjs.org/",
-		description: "The React Framework for the Web.",
-	},
-	{
-		label: "react",
-		href: "https://react.dev/",
-		description: "A JavaScript library for building user interfaces.",
-	},
-	{
-		label: "tailwindcss",
-		href: "https://tailwindcss.com/",
-		description: "A utility-first CSS framework.",
-	},
-	{
-		label: "typescript",
-		href: "https://www.typescriptlang.org/",
-		description: "A strongly typed language that builds on top of JavaScript.",
-	},
-];
-
-const techs = [
-	{ label: "HTML", img: "/static/techs/html.svg", inverts: false },
-	{ label: "CSS", img: "/static/techs/css.svg", inverts: false },
-	{ label: "Scss/Sass", img: "/static/techs/sass.svg", inverts: false },
-	{ label: "JavaScript", img: "/static/techs/javascript.svg", inverts: false },
-	{ label: "TypeScript", img: "/static/techs/typescript.svg", inverts: false },
-	{ label: "React", img: "/static/techs/react.svg", inverts: false },
-	{ label: "Next.js", img: "/static/techs/nextjs.svg", inverts: true },
-	{ label: "Vite", img: "/static/techs/vite.svg", inverts: false },
-	{
-		label: "TailwindCSS",
-		img: "/static/techs/tailwindcss.svg",
-		inverts: false,
-	},
-	{
-		label: "Framer Motion",
-		img: "/static/techs/framermotion.svg",
-		inverts: false,
-	},
-	{ label: "SWR", img: "/static/techs/swr.svg", inverts: true },
-	{ label: "Prisma", img: "/static/techs/prisma.svg", inverts: true },
-	{ label: "Supabase", img: "/static/techs/supabase.svg", inverts: false },
-	{ label: "Firebase", img: "/static/techs/firebase.svg", inverts: false },
-];
-
-const tools = [
-	{ label: "Pop OS", img: "/static/tools/popos.svg", inverts: false },
-	{ label: "Obsidian", img: "/static/tools/obsidian.svg", inverts: false },
-	{ label: "Figma", img: "/static/tools/figma.svg", inverts: false },
-	{ label: "VS Code", img: "/static/tools/vscode.svg", inverts: false },
-	{ label: "Vim Motions", img: "/static/tools/vim.svg", inverts: false },
-	{ label: "Brave", img: "/static/tools/brave.svg", inverts: false },
-	{ label: "GitHub", img: "/static/github.svg", inverts: true },
-	{ label: "shadcn/ui", img: "/static/tools/shadcn.svg", inverts: true },
-	{ label: "Material UI", img: "/static/tools/material.svg", inverts: false },
-	{ label: "Headless UI", img: "/static/tools/headless.svg", inverts: false },
-	{ label: "myNoise.net", img: "/static/tools/mynoise.svg", inverts: true },
-	{ label: "ChatGPT", img: "/static/tools/chatgpt.svg", inverts: true },
-];
+import { stack, projects, techs, tools } from "@/data/data";
+import CardCollection from "@/components/card-collection";
 
 export default function Home() {
 	return (
@@ -94,7 +33,7 @@ export default function Home() {
 						and building web applications using
 					</p>
 					{stack.map((tech, index) => (
-						<Fragment key={tech.label}>
+						<Fragment key={tech.id}>
 							<p className="inline">{index === stack.length - 1 && "and"} </p>
 							<HoverCard key={tech.label}>
 								<HoverCardTrigger asChild>
@@ -180,20 +119,62 @@ export default function Home() {
 					</Button>
 				</div>
 			</section>
+
 			<Separator />
+
 			<section className="flex flex-col gap-2">
 				<h2 className="text-2xl font-bold">Projects</h2>
 				<div className="px-12">
 					<Carousel className="w-full">
 						<CarouselContent>
-							{Array.from({ length: 5 }).map((_, index) => (
-								<CarouselItem key={index} className="sm:basis-1/2">
-									<Card>
-										<CardContent className="relative flex aspect-square items-center justify-center p-6">
-											<Image src="/static/example.png" alt="example" fill />
-											<span className="text-3xl font-semibold">
-												{index + 1}
+							{projects.map((project) => (
+								<CarouselItem key={project.id} className="sm:basis-1/2">
+									<Card className="group">
+										<CardContent className="p-6 relative flex flex-col aspect-square justify-center space-y-4">
+											<h2
+												data-before={project.title}
+												className="text-4xl text-gray-700 dark:text-gray-300 font-bold max-w-[9ch] whitespace-pre-wrap relative before:content-[attr(data-before)] before:absolute before:text-black dark:before:text-white before:w-0 before:overflow-hidden before:transition-[width] before:duration-300 group-hover:before:w-full"
+											>
+												{project.title}
+											</h2>
+											<Separator />
+											<span className="flex items-center space-x-6">
+												<a
+													href={project.href}
+													target="_blank"
+													rel="noreferrer"
+													className="relative hover:outline outline-[6px] outline-gray-300 dark:outline-gray-700 rounded-full h-8 w-8 sm:h-10 sm:w-10 transition-[outline] duration-150"
+												>
+													<Image src={project.img} alt={project.title} fill />
+												</a>
+												<a
+													href={project.github}
+													target="_blank"
+													rel="noreferrer"
+													className="relative hover:outline outline-[6px] outline-gray-300 dark:outline-gray-700 rounded-full h-8 w-8 sm:h-10 sm:w-10 transition-[outline] duration-150"
+												>
+													<Image
+														src="/static/github.svg"
+														alt={`${project.title} GitHub`}
+														fill
+														className="dark:invert"
+													/>
+												</a>
 											</span>
+											<a
+												href={project.href}
+												target="_blank"
+												rel="noreferrer"
+												className="group-hover:bg-gray-300 dark:group-hover:bg-gray-700 transition-colors duration-300 p-3 rounded-lg absolute top-0 right-4 xs:top-2 xs:right-6"
+											>
+												<Image
+													src="/static/link.svg"
+													alt={`Link to ${project.title}`}
+													width={18}
+													height={18}
+													className="dark:invert"
+												/>
+											</a>
 										</CardContent>
 									</Card>
 								</CarouselItem>
@@ -204,52 +185,14 @@ export default function Home() {
 					</Carousel>
 				</div>
 			</section>
+
 			<Separator />
-			<section className="flex flex-col gap-2">
-				<h2 className="text-2xl font-bold">Techs</h2>
-				<div className="w-full grid grid-cols-2 sm:grid-cols-4 place-items-center gap-4">
-					{techs.map((tech) => (
-						<Card key={tech.label} className="w-full grid place-items-center">
-							<CardHeader className="flex flex-col items-center gap-4">
-								<Avatar className="rounded-none">
-									<AvatarImage
-										src={tech.img}
-										alt={tech.label}
-										className={tech.inverts ? "dark:invert" : ""}
-									/>
-									<AvatarFallback>
-										{tech.label.slice(0, 2).toUpperCase()}
-									</AvatarFallback>
-								</Avatar>
-								<CardTitle className="text-xl">{tech.label}</CardTitle>
-							</CardHeader>
-						</Card>
-					))}
-				</div>
-			</section>
+
+			<CardCollection title="techs" array={techs} />
+
 			<Separator />
-			<section className="flex flex-col gap-2">
-				<h2 className="text-2xl font-bold">Uses</h2>
-				<div className="w-full grid grid-cols-2 sm:grid-cols-4 place-items-center gap-4">
-					{tools.map((tool) => (
-						<Card key={tool.label} className="w-full grid place-items-center">
-							<CardHeader className="flex flex-col items-center gap-4">
-								<Avatar className="rounded-none">
-									<AvatarImage
-										src={tool.img}
-										alt={tool.label}
-										className={tool.inverts ? "dark:invert" : ""}
-									/>
-									<AvatarFallback>
-										{tool.label.slice(0, 2).toUpperCase()}
-									</AvatarFallback>
-								</Avatar>
-								<CardTitle className="text-xl">{tool.label}</CardTitle>
-							</CardHeader>
-						</Card>
-					))}
-				</div>
-			</section>
+
+			<CardCollection title="uses" array={tools} />
 		</Layout>
 	);
 }
