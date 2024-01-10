@@ -1,12 +1,10 @@
 import Head from "next/head";
 import Navbar from "@/components/navbar";
 import { Alumni_Sans as FontSans } from "next/font/google";
-import { ReactNode, useEffect, useRef } from "react";
+import { ReactNode, useState } from "react";
 import { ThemeProvider } from "./theme-provider";
 import { cn } from "@/lib/utils";
-import { toast } from "sonner";
-import { useRouter } from "next/router";
-import { Toaster } from "./ui/sonner";
+import { Card, CardContent } from "./ui/card";
 
 export const fontSans = FontSans({
 	subsets: ["latin"],
@@ -18,30 +16,7 @@ type LayoutProps = {
 };
 
 const Layout = ({ children }: LayoutProps) => {
-	const router = useRouter();
-	const toasted = useRef(false);
-
-	useEffect(() => {
-		if (toasted.current) {
-			return;
-		}
-
-		setTimeout(() => {
-			toast("Hey there! Thanks for dropping by!", {
-				description:
-					"Feel free to check out my resume and mail right over here. Cheers!",
-				action: {
-					label: "Resume",
-					onClick: () =>
-						router.push(
-							"https://docs.google.com/document/d/13WfY4hwWSzz77P_BCD2dDJVlw44ESNJqeyRvQTkcKvc/edit?pli=1"
-						),
-				},
-			});
-		}, 10000);
-
-		toasted.current = true;
-	}, [router]);
+	const [closed, setClosed] = useState(false);
 
 	return (
 		<>
@@ -67,8 +42,38 @@ const Layout = ({ children }: LayoutProps) => {
 				>
 					<Navbar />
 					{children}
-					<Toaster duration={600000} closeButton />
 				</main>
+
+				<Card
+					className={cn(
+						"hidden 2xl:flex w-80 fixed bottom-10 right-10 text-xl font-sans transition-opacity duration-300",
+						closed && "opacity-0",
+						!closed && "opacity-100",
+						fontSans.variable
+					)}
+				>
+					<CardContent className="p-6">
+						<p>
+							<b>Thanks for dropping by!</b> Feel free to check out my resume{" "}
+							<a
+								href="https://docs.google.com/document/d/13WfY4hwWSzz77P_BCD2dDJVlw44ESNJqeyRvQTkcKvc/edit?pli=1"
+								target="_blank"
+								rel="noreferrer"
+								className="underline decoration-1 hover:text-gray-700 dark:hover:text-gray-300"
+							>
+								right over here
+							</a>
+							. Cheers!
+						</p>
+					</CardContent>
+					<button
+						type="button"
+						onClick={() => setClosed(true)}
+						className="absolute -top-1 -right-1 cursor-pointer text-2xl text-white bg-black dark:text-black dark:bg-white hover:bg-black/80 dark:hover:bg-white/80 h-6 w-6 flex items-center justify-center rounded-full"
+					>
+						X
+					</button>
+				</Card>
 			</ThemeProvider>
 		</>
 	);

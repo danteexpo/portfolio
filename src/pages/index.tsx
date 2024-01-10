@@ -193,6 +193,25 @@ export default function Home() {
 			<Separator />
 
 			<CardCollection title="uses" array={tools} />
+
+			<section className="flex flex-col gap-2 2xl:hidden">
+				<Separator />
+
+				<div className="p-2">
+					<p>
+						<b>Thanks for dropping by!</b> Feel free to check out my resume{" "}
+						<a
+							href="https://docs.google.com/document/d/13WfY4hwWSzz77P_BCD2dDJVlw44ESNJqeyRvQTkcKvc/edit?pli=1"
+							target="_blank"
+							rel="noreferrer"
+							className="underline decoration-1 hover:text-gray-700 dark:hover:text-gray-300"
+						>
+							right over here
+						</a>
+						. Cheers!
+					</p>
+				</div>
+			</section>
 		</Layout>
 	);
 }
