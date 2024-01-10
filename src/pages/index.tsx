@@ -7,8 +7,8 @@ import {
 	HoverCardTrigger,
 } from "@/components/ui/hover-card";
 import { Separator } from "@/components/ui/separator";
-import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
-import { Fragment } from "react";
+import { Card, CardContent } from "@/components/ui/card";
+import { Fragment, useEffect } from "react";
 import {
 	Carousel,
 	CarouselContent,
@@ -19,8 +19,29 @@ import {
 import Image from "next/image";
 import { stack, projects, techs, tools } from "@/data/data";
 import CardCollection from "@/components/card-collection";
+import { Toaster } from "@/components/ui/sonner";
+import { toast } from "sonner";
+import { useRouter } from "next/router";
 
 export default function Home() {
+	const router = useRouter();
+
+	useEffect(() => {
+		setTimeout(() => {
+			toast("Hey there! Thanks for dropping by!", {
+				description:
+					"Feel free to check out my resume and mail right over here. Cheers!",
+				action: {
+					label: "Resume",
+					onClick: () =>
+						router.push(
+							"https://docs.google.com/document/d/13WfY4hwWSzz77P_BCD2dDJVlw44ESNJqeyRvQTkcKvc/edit?pli=1"
+						),
+				},
+			});
+		}, 10000);
+	}, [router]);
+
 	return (
 		<Layout>
 			<section className="flex flex-col gap-4">
@@ -193,6 +214,8 @@ export default function Home() {
 			<Separator />
 
 			<CardCollection title="uses" array={tools} />
+
+			<Toaster duration={600000} closeButton />
 		</Layout>
 	);
 }
