@@ -1,9 +1,12 @@
 import Head from "next/head";
 import Navbar from "@/components/navbar";
 import { Alumni_Sans as FontSans } from "next/font/google";
-import { ReactNode } from "react";
+import { ReactNode, useEffect, useRef } from "react";
 import { ThemeProvider } from "./theme-provider";
 import { cn } from "@/lib/utils";
+import { toast } from "sonner";
+import { useRouter } from "next/router";
+import { Toaster } from "./ui/sonner";
 
 export const fontSans = FontSans({
 	subsets: ["latin"],
@@ -15,6 +18,31 @@ type LayoutProps = {
 };
 
 const Layout = ({ children }: LayoutProps) => {
+	const router = useRouter();
+	const toasted = useRef(false);
+
+	useEffect(() => {
+		if (toasted.current) {
+			return;
+		}
+
+		setTimeout(() => {
+			toast("Hey there! Thanks for dropping by!", {
+				description:
+					"Feel free to check out my resume and mail right over here. Cheers!",
+				action: {
+					label: "Resume",
+					onClick: () =>
+						router.push(
+							"https://docs.google.com/document/d/13WfY4hwWSzz77P_BCD2dDJVlw44ESNJqeyRvQTkcKvc/edit?pli=1"
+						),
+				},
+			});
+		}, 10000);
+
+		toasted.current = true;
+	}, [router]);
+
 	return (
 		<>
 			<Head>
@@ -39,6 +67,7 @@ const Layout = ({ children }: LayoutProps) => {
 				>
 					<Navbar />
 					{children}
+					<Toaster duration={600000} closeButton />
 				</main>
 			</ThemeProvider>
 		</>
