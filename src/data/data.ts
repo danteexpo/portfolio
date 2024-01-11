@@ -64,6 +64,13 @@ const projects = [
 	},
 	{
 		id: 5,
+		title: "Keyboard Champ",
+		href: "https://keyboard-champ.vercel.app/",
+		github: "https://github.com/danteexpo/keyboard-champ",
+		img: "/static/projects/keyboardchamp.svg",
+	},
+	{
+		id: 6,
 		title: "Magic Match",
 		href: "https://de-magic-match.netlify.app/",
 		github: "https://github.com/danteexpo/magic-match",
