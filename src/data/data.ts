@@ -1,4 +1,26 @@
-const stack = [
+export type StackType = {
+	id: number;
+	label: string;
+	href: string;
+	description: string;
+};
+
+export type ProjectType = {
+	id: number;
+	title: string;
+	href: string;
+	github: string;
+	img: string;
+};
+
+export type GenericType = {
+	id: number;
+	label: string;
+	img: string;
+	inverts: boolean;
+};
+
+const stackData: StackType[] = [
 	{
 		id: 0,
 		label: "nextjs",
@@ -25,7 +47,7 @@ const stack = [
 	},
 ];
 
-const projects = [
+const projectsData: ProjectType[] = [
 	{
 		id: 0,
 		title: "Expense Tracker",
@@ -46,7 +68,6 @@ const projects = [
 		href: "https://de-teamwork.netlify.app/",
 		github: "https://github.com/danteexpo/teamwork",
 		img: "/static/projects/teamwork.svg",
-		color: "#ff00ff",
 	},
 	{
 		id: 3,
@@ -78,7 +99,7 @@ const projects = [
 	},
 ];
 
-const techs = [
+const techsData: GenericType[] = [
 	{ id: 0, label: "HTML", img: "/static/techs/html.svg", inverts: false },
 	{ id: 1, label: "CSS", img: "/static/techs/css.svg", inverts: false },
 	{ id: 2, label: "Scss/Sass", img: "/static/techs/sass.svg", inverts: false },
@@ -125,7 +146,7 @@ const techs = [
 	},
 ];
 
-const tools = [
+const toolsData: GenericType[] = [
 	{ id: 0, label: "Pop OS", img: "/static/tools/popos.svg", inverts: false },
 	{
 		id: 1,
@@ -160,4 +181,4 @@ const tools = [
 	{ id: 11, label: "ChatGPT", img: "/static/tools/chatgpt.svg", inverts: true },
 ];
 
-export { stack, projects, techs, tools };
+export { stackData, projectsData, techsData, toolsData };

@@ -17,10 +17,40 @@ import {
 	CarouselPrevious,
 } from "@/components/ui/carousel";
 import Image from "next/image";
-import { stack, projects, techs, tools } from "@/data/data";
+import { GetStaticProps, InferGetStaticPropsType } from "next";
+import {
+	stackData,
+	projectsData,
+	techsData,
+	toolsData,
+	StackType,
+	ProjectType,
+	GenericType,
+} from "@/data/data";
 import CardCollection from "@/components/card-collection";
 
-export default function Home() {
+export const getStaticProps = (async () => {
+	return {
+		props: {
+			stack: stackData,
+			projects: projectsData,
+			techs: techsData,
+			tools: toolsData,
+		},
+	};
+}) satisfies GetStaticProps<{
+	stack: StackType[];
+	projects: ProjectType[];
+	techs: GenericType[];
+	tools: GenericType[];
+}>;
+
+export default function Home({
+	stack,
+	projects,
+	techs,
+	tools,
+}: InferGetStaticPropsType<typeof getStaticProps>) {
 	return (
 		<Layout>
 			<section className="flex flex-col gap-4">
