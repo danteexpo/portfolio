@@ -175,7 +175,12 @@ export default function Home({
 													rel="noreferrer"
 													className="relative hover:outline outline-[6px] outline-gray-300 dark:outline-gray-700 rounded-full h-8 w-8 sm:h-10 sm:w-10 transition-[outline] duration-150"
 												>
-													<Image src={project.img} alt={project.title} fill />
+													<Image
+														src={project.img}
+														alt={project.title}
+														fill
+														className={project.inverts ? "dark:invert" : ""}
+													/>
 												</a>
 												<a
 													href={project.github}

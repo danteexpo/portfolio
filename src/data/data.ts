@@ -11,6 +11,7 @@ export type ProjectType = {
 	href: string;
 	github: string;
 	img: string;
+	inverts: boolean;
 };
 
 export type GenericType = {
@@ -50,52 +51,51 @@ const stackData: StackType[] = [
 const projectsData: ProjectType[] = [
 	{
 		id: 0,
-		title: "Expense Tracker",
-		href: "https://de-expense-tracker.netlify.app/",
-		github: "https://github.com/danteexpo/expense-tracker",
-		img: "/static/projects/expensetracker.svg",
+		title: "Kanban Board",
+		href: "https://kanban-de.vercel.app/",
+		github: "https://github.com/danteexpo/kanban",
+		img: "/static/projects/kanban.svg",
+		inverts: true,
 	},
 	{
 		id: 1,
-		title: "Facebook Clone",
-		href: "https://de-facebook-clone.netlify.app/",
-		github: "https://github.com/danteexpo/facebook-clone",
-		img: "/static/projects/facebookclone.svg",
+		title: "Expense Tracker",
+		href: "https://expense-tracker-de.vercel.app/",
+		github: "https://github.com/danteexpo/expense-tracker",
+		img: "/static/projects/expensetracker.svg",
+		inverts: false,
 	},
 	{
 		id: 2,
 		title: "Team Work!",
-		href: "https://de-teamwork.netlify.app/",
+		href: "https://teamwork-de.vercel.app/",
 		github: "https://github.com/danteexpo/teamwork",
 		img: "/static/projects/teamwork.svg",
+		inverts: false,
 	},
 	{
 		id: 3,
-		title: "Rick & Morty Wiki",
-		href: "https://de-rick-and-morty-wiki.netlify.app/",
-		github: "https://github.com/danteexpo/rick-morty-wiki",
-		img: "/static/projects/rickandmorty.svg",
+		title: "Netflix Clone",
+		href: "https://netflix-clone-de.vercel.app/",
+		github: "https://github.com/danteexpo/netflix-clone",
+		img: "/static/projects/netflixclone.svg",
+		inverts: false,
 	},
 	{
 		id: 4,
-		title: "Netflix Clone",
-		href: "https://de-netflix-clone.netlify.app/",
-		github: "https://github.com/danteexpo/netflix-clone-app",
-		img: "/static/projects/netflixclone.svg",
-	},
-	{
-		id: 5,
 		title: "Keyboard Champ",
 		href: "https://keyboard-champ.vercel.app/",
 		github: "https://github.com/danteexpo/keyboard-champ",
 		img: "/static/projects/keyboardchamp.svg",
+		inverts: false,
 	},
 	{
-		id: 6,
+		id: 5,
 		title: "Magic Match",
-		href: "https://de-magic-match.netlify.app/",
+		href: "https://magic-match-de.vercel.app/",
 		github: "https://github.com/danteexpo/magic-match",
 		img: "/static/projects/magicmatch.svg",
+		inverts: false,
 	},
 ];
 
