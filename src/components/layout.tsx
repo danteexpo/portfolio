@@ -24,7 +24,7 @@ const Layout = ({ children }: LayoutProps) => {
 				<title>Dante Expósito</title>
 				<meta
 					name="description"
-					content="A self-taught and optimistic frontend developer who loves designing and building web applications."
+					content="A self-taught and optimistic fullstack engineer who loves designing and building web applications."
 				/>
 				<link rel="icon" href="/favicon.svg" />
 			</Head>
