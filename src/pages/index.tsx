@@ -160,7 +160,7 @@ export default function Home({
               {projects.map((project) => (
                 <CarouselItem key={project.id} className="sm:basis-1/2">
                   <a href={project.href} target="_blank" rel="noreferrer">
-                    <Card className="group hover:border-primary transition-colors duration-300">
+                    <Card className="group hover:border-gray-300 dark:hover:border-gray-700 transition-colors duration-300">
                       <CardContent className="p-6 relative flex flex-col aspect-square justify-center space-y-4">
                         <h2
                           data-before={project.title}
