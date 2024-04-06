@@ -159,59 +159,36 @@ export default function Home({
             <CarouselContent>
               {projects.map((project) => (
                 <CarouselItem key={project.id} className="sm:basis-1/2">
-                  <Card className="group">
-                    <CardContent className="p-6 relative flex flex-col aspect-square justify-center space-y-4">
-                      <h2
-                        data-before={project.title}
-                        className="text-4xl text-gray-700 dark:text-gray-300 font-bold max-w-[9ch] whitespace-pre-wrap relative before:content-[attr(data-before)] before:absolute before:text-black dark:before:text-white before:w-0 before:overflow-hidden before:transition-[width] before:duration-300 group-hover:before:w-full"
-                      >
-                        {project.title}
-                      </h2>
-                      <Separator />
-                      <span className="flex items-center space-x-6">
-                        <a
-                          href={project.href}
-                          target="_blank"
-                          rel="noreferrer"
-                          className="relative hover:outline outline-[6px] outline-gray-300 dark:outline-gray-700 rounded-full h-8 w-8 sm:h-10 sm:w-10 transition-[outline] duration-150"
+                  <a href={project.href} target="_blank" rel="noreferrer">
+                    <Card className="group hover:border-primary transition-colors duration-300">
+                      <CardContent className="p-6 relative flex flex-col aspect-square justify-center space-y-4">
+                        <h2
+                          data-before={project.title}
+                          className="text-4xl text-gray-700 dark:text-gray-300 font-bold max-w-[9ch] whitespace-pre-wrap relative before:content-[attr(data-before)] before:absolute before:text-black dark:before:text-white before:w-0 before:overflow-hidden before:transition-[width] before:duration-300 group-hover:before:w-full"
                         >
+                          {project.title}
+                        </h2>
+                        <Separator />
+                        <span className="relative rounded-full h-8 w-8 sm:h-10 sm:w-10 md:h-12 md:w-12">
                           <Image
                             src={project.img}
                             alt={project.title}
                             fill
                             className={project.inverts ? 'dark:invert' : ''}
                           />
-                        </a>
-                        <a
-                          href={project.github}
-                          target="_blank"
-                          rel="noreferrer"
-                          className="relative hover:outline outline-[6px] outline-gray-300 dark:outline-gray-700 rounded-full h-8 w-8 sm:h-10 sm:w-10 transition-[outline] duration-150"
-                        >
+                        </span>
+                        <span className="group-hover:bg-gray-300 dark:group-hover:bg-gray-700 transition-colors duration-300 p-3 rounded-lg absolute top-0 right-4 xs:top-2 xs:right-6">
                           <Image
-                            src="/static/github.svg"
-                            alt={`${project.title} GitHub`}
-                            fill
+                            src="/static/link.svg"
+                            alt={`Link to ${project.title}`}
+                            width={18}
+                            height={18}
                             className="dark:invert"
                           />
-                        </a>
-                      </span>
-                      <a
-                        href={project.href}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="group-hover:bg-gray-300 dark:group-hover:bg-gray-700 transition-colors duration-300 p-3 rounded-lg absolute top-0 right-4 xs:top-2 xs:right-6"
-                      >
-                        <Image
-                          src="/static/link.svg"
-                          alt={`Link to ${project.title}`}
-                          width={18}
-                          height={18}
-                          className="dark:invert"
-                        />
-                      </a>
-                    </CardContent>
-                  </Card>
+                        </span>
+                      </CardContent>
+                    </Card>
+                  </a>
                 </CarouselItem>
               ))}
             </CarouselContent>

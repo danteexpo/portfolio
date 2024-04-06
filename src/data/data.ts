@@ -9,7 +9,6 @@ export type ProjectType = {
 	id: number;
 	title: string;
 	href: string;
-	github: string;
 	img: string;
 	inverts: boolean;
 };
@@ -53,7 +52,6 @@ const projectsData: ProjectType[] = [
 		id: 0,
 		title: "Kanban Board",
 		href: "https://kanban-de.vercel.app/",
-		github: "https://github.com/danteexpo/kanban",
 		img: "/static/projects/kanban.svg",
 		inverts: true,
 	},
@@ -61,7 +59,6 @@ const projectsData: ProjectType[] = [
 		id: 1,
 		title: "Expense Tracker",
 		href: "https://expense-tracker-de.vercel.app/",
-		github: "https://github.com/danteexpo/expense-tracker",
 		img: "/static/projects/expensetracker.svg",
 		inverts: false,
 	},
@@ -69,7 +66,6 @@ const projectsData: ProjectType[] = [
 		id: 2,
 		title: "Team Work!",
 		href: "https://teamwork-de.vercel.app/",
-		github: "https://github.com/danteexpo/teamwork",
 		img: "/static/projects/teamwork.svg",
 		inverts: false,
 	},
@@ -77,7 +73,6 @@ const projectsData: ProjectType[] = [
 		id: 3,
 		title: "Netflix Clone",
 		href: "https://netflix-clone-de.vercel.app/",
-		github: "https://github.com/danteexpo/netflix-clone",
 		img: "/static/projects/netflixclone.svg",
 		inverts: false,
 	},
@@ -85,7 +80,6 @@ const projectsData: ProjectType[] = [
 		id: 4,
 		title: "Keyboard Champ",
 		href: "https://keyboard-champ.vercel.app/",
-		github: "https://github.com/danteexpo/keyboard-champ",
 		img: "/static/projects/keyboardchamp.svg",
 		inverts: false,
 	},
@@ -93,7 +87,6 @@ const projectsData: ProjectType[] = [
 		id: 5,
 		title: "Magic Match",
 		href: "https://magic-match-de.vercel.app/",
-		github: "https://github.com/danteexpo/magic-match",
 		img: "/static/projects/magicmatch.svg",
 		inverts: false,
 	},
