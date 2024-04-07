@@ -95,7 +95,7 @@ const projectsData: ProjectType[] = [
 const skillsData: GenericType[] = [
 	{ id: 0, label: "HTML", img: "/static/skills/html.svg", inverts: false },
 	{ id: 1, label: "CSS", img: "/static/skills/css.svg", inverts: false },
-	{ id: 2, label: "Scss/Sass", img: "/static/skills/sass.svg", inverts: false },
+	{ id: 2, label: "SASS", img: "/static/skills/sass.svg", inverts: false },
 	{
 		id: 3,
 		label: "JavaScript",
@@ -109,8 +109,8 @@ const skillsData: GenericType[] = [
 		inverts: false,
 	},
 	{ id: 5, label: "React", img: "/static/skills/react.svg", inverts: false },
-	{ id: 6, label: "Next.js", img: "/static/skills/nextjs.svg", inverts: true },
-	{ id: 7, label: "Vite", img: "/static/skills/vite.svg", inverts: false },
+	{ id: 6, label: "Vite", img: "/static/skills/vite.svg", inverts: false },
+	{ id: 7, label: "Next.js", img: "/static/skills/nextjs.svg", inverts: true },
 	{
 		id: 8,
 		label: "TailwindCSS",
@@ -119,30 +119,41 @@ const skillsData: GenericType[] = [
 	},
 	{
 		id: 9,
-		label: "Framer Motion",
-		img: "/static/skills/framermotion.svg",
-		inverts: false,
-	},
-	{
-		id: 10,
 		label: "Zustand",
 		img: "/static/skills/zustand.svg",
 		inverts: false,
 	},
-	{ id: 11, label: "Zod", img: "/static/skills/zod.svg", inverts: false },
+	{ id: 10, label: "Zod", img: "/static/skills/zod.svg", inverts: false },
+	{ id: 11, label: "TanStack Query", img: "/static/skills/tanstack-query.svg", inverts: false },
 	{ id: 12, label: "SWR", img: "/static/skills/swr.svg", inverts: true },
-	{ id: 13, label: "Prisma", img: "/static/skills/prisma.svg", inverts: true },
+	{ id: 13, label: "tRPC", img: "/static/skills/trpc.svg", inverts: false },
+	{ id: 14, label: "Node.js", img: "/static/skills/nodejs.svg", inverts: true },
+	{ id: 15, label: "Nest.js", img: "/static/skills/nestjs.svg", inverts: false },
+	{ id: 16, label: "PostgreSQL", img: "/static/skills/postgresql.svg", inverts: false },
+	{ id: 17, label: "Prisma", img: "/static/skills/prisma.svg", inverts: true },
 	{
-		id: 14,
+		id: 18,
 		label: "Supabase",
 		img: "/static/skills/supabase.svg",
 		inverts: false,
 	},
 	{
-		id: 15,
+		id: 19,
 		label: "Firebase",
 		img: "/static/skills/firebase.svg",
 		inverts: false,
+	},
+	{
+		id: 20,
+		label: "Figma",
+		img: "/static/skills/figma.svg",
+		inverts: false,
+	},
+	{
+		id: 21,
+		label: "Vercel",
+		img: "/static/skills/vercel.svg",
+		inverts: true,
 	},
 ];
 
