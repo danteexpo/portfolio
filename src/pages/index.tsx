@@ -21,8 +21,7 @@ import { GetStaticProps, InferGetStaticPropsType } from 'next';
 import {
   stackData,
   projectsData,
-  techsData,
-  toolsData,
+  skillsData,
   StackType,
   ProjectType,
   GenericType,
@@ -34,22 +33,19 @@ export const getStaticProps = (async () => {
     props: {
       stack: stackData,
       projects: projectsData,
-      techs: techsData,
-      tools: toolsData,
+      skills: skillsData,
     },
   };
 }) satisfies GetStaticProps<{
   stack: StackType[];
   projects: ProjectType[];
-  techs: GenericType[];
-  tools: GenericType[];
+  skills: GenericType[];
 }>;
 
 export default function Home({
   stack,
   projects,
-  techs,
-  tools,
+  skills,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <Layout>
@@ -80,7 +76,7 @@ export default function Home({
                   <div className="flex justify-between space-x-4">
                     <Avatar className="rounded-none">
                       <AvatarImage
-                        src={`/static/techs/${tech.label}.svg`}
+                        src={`/static/skills/${tech.label}.svg`}
                         alt={tech.label}
                         className={tech.label === 'nextjs' ? 'dark:invert' : ''}
                       />
@@ -200,11 +196,7 @@ export default function Home({
 
       <Separator />
 
-      <CardCollection title="techs" array={techs} />
-
-      <Separator />
-
-      <CardCollection title="uses" array={tools} />
+      <CardCollection title="skills" array={skills} />
 
       <section className="flex flex-col gap-2 2xl:hidden">
         <Separator />

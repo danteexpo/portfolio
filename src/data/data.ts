@@ -92,93 +92,58 @@ const projectsData: ProjectType[] = [
 	},
 ];
 
-const techsData: GenericType[] = [
-	{ id: 0, label: "HTML", img: "/static/techs/html.svg", inverts: false },
-	{ id: 1, label: "CSS", img: "/static/techs/css.svg", inverts: false },
-	{ id: 2, label: "Scss/Sass", img: "/static/techs/sass.svg", inverts: false },
+const skillsData: GenericType[] = [
+	{ id: 0, label: "HTML", img: "/static/skills/html.svg", inverts: false },
+	{ id: 1, label: "CSS", img: "/static/skills/css.svg", inverts: false },
+	{ id: 2, label: "Scss/Sass", img: "/static/skills/sass.svg", inverts: false },
 	{
 		id: 3,
 		label: "JavaScript",
-		img: "/static/techs/javascript.svg",
+		img: "/static/skills/javascript.svg",
 		inverts: false,
 	},
 	{
 		id: 4,
 		label: "TypeScript",
-		img: "/static/techs/typescript.svg",
+		img: "/static/skills/typescript.svg",
 		inverts: false,
 	},
-	{ id: 5, label: "React", img: "/static/techs/react.svg", inverts: false },
-	{ id: 6, label: "Next.js", img: "/static/techs/nextjs.svg", inverts: true },
-	{ id: 7, label: "Vite", img: "/static/techs/vite.svg", inverts: false },
+	{ id: 5, label: "React", img: "/static/skills/react.svg", inverts: false },
+	{ id: 6, label: "Next.js", img: "/static/skills/nextjs.svg", inverts: true },
+	{ id: 7, label: "Vite", img: "/static/skills/vite.svg", inverts: false },
 	{
 		id: 8,
 		label: "TailwindCSS",
-		img: "/static/techs/tailwindcss.svg",
+		img: "/static/skills/tailwindcss.svg",
 		inverts: false,
 	},
 	{
 		id: 9,
 		label: "Framer Motion",
-		img: "/static/techs/framermotion.svg",
+		img: "/static/skills/framermotion.svg",
 		inverts: false,
 	},
 	{
 		id: 10,
 		label: "Zustand",
-		img: "/static/techs/zustand.svg",
+		img: "/static/skills/zustand.svg",
 		inverts: false,
 	},
-	{ id: 11, label: "Zod", img: "/static/techs/zod.svg", inverts: false },
-	{ id: 12, label: "SWR", img: "/static/techs/swr.svg", inverts: true },
-	{ id: 13, label: "Prisma", img: "/static/techs/prisma.svg", inverts: true },
+	{ id: 11, label: "Zod", img: "/static/skills/zod.svg", inverts: false },
+	{ id: 12, label: "SWR", img: "/static/skills/swr.svg", inverts: true },
+	{ id: 13, label: "Prisma", img: "/static/skills/prisma.svg", inverts: true },
 	{
 		id: 14,
 		label: "Supabase",
-		img: "/static/techs/supabase.svg",
+		img: "/static/skills/supabase.svg",
 		inverts: false,
 	},
 	{
 		id: 15,
 		label: "Firebase",
-		img: "/static/techs/firebase.svg",
+		img: "/static/skills/firebase.svg",
 		inverts: false,
 	},
 ];
 
-const toolsData: GenericType[] = [
-	{ id: 0, label: "Pop OS", img: "/static/tools/popos.svg", inverts: false },
-	{
-		id: 1,
-		label: "Obsidian",
-		img: "/static/tools/obsidian.svg",
-		inverts: false,
-	},
-	{ id: 2, label: "Figma", img: "/static/tools/figma.svg", inverts: false },
-	{ id: 3, label: "VS Code", img: "/static/tools/vscode.svg", inverts: false },
-	{ id: 4, label: "Vim Motions", img: "/static/tools/vim.svg", inverts: false },
-	{ id: 5, label: "Brave", img: "/static/tools/brave.svg", inverts: false },
-	{ id: 6, label: "GitHub", img: "/static/github.svg", inverts: true },
-	{ id: 7, label: "shadcn/ui", img: "/static/tools/shadcn.svg", inverts: true },
-	{
-		id: 8,
-		label: "Material UI",
-		img: "/static/tools/material.svg",
-		inverts: false,
-	},
-	{
-		id: 9,
-		label: "Headless UI",
-		img: "/static/tools/headless.svg",
-		inverts: false,
-	},
-	{
-		id: 10,
-		label: "myNoise.net",
-		img: "/static/tools/mynoise.svg",
-		inverts: true,
-	},
-	{ id: 11, label: "ChatGPT", img: "/static/tools/chatgpt.svg", inverts: true },
-];
-
-export { stackData, projectsData, techsData, toolsData };
+export { stackData, projectsData, skillsData };
