@@ -43,7 +43,7 @@ export default function Work() {
         <div>
           <h2 className="text-2xl font-bold">Swise Software Factory</h2>
           <h4 className="text-gray-500 dark:text-gray-400">
-            UI/UX Designer and Frontend Developer 03/2022 - 03/2023
+            UI/UX Designer and Frontend Developer 03/2022 - 06/2023
           </h4>
         </div>
         <p>
