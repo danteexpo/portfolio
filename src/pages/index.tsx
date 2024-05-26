@@ -55,7 +55,7 @@ export default function Home({
             Hello everyone! I&apos;m Dante Expósito
           </h1>
           <p className="inline">
-            A self-taught and optimistic fullstack engineer who loves designing
+            A self-taught and optimistic frontend engineer who loves designing
             and building web applications using
           </p>
           {stack.map((tech, index) => (
